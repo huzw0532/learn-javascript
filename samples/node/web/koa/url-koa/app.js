@@ -45,6 +45,7 @@ router.post('/signin', async (ctx, next) => {
 
 // add router middleware:
 app.use(router.routes());
+console.log(router);
 
-app.listen(3000);
+app.listen(3001);
 console.log('app started at port 3000...');

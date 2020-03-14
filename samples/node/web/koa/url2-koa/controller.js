@@ -7,6 +7,7 @@ function addMapping(router, mapping) {
     for (var url in mapping) {
         if (url.startsWith('GET ')) {
             var path = url.substring(4);
+            // console.log('show data'+url+'*'+url.substring(4)+'*'+mapping[url]);
             router.get(path, mapping[url]);
             console.log(`register URL mapping: GET ${path}`);
         } else if (url.startsWith('POST ')) {
@@ -41,6 +42,7 @@ module.exports = function (dir) {
     let
         controllers_dir = dir || 'controllers',
         router = require('koa-router')();
+        console.log(dir+'****')
     addControllers(router, controllers_dir);
     return router.routes();
 };
